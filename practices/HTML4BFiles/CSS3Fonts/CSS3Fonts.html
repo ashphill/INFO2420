@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS3 Embedded Fonts</title>
+
+<style type="text/css">
+
+/* Embedded font with required ordering:
+   1) EOT without format
+   2) local() fallback, then TTF with format('truetype') */
+   @font-face{
+  font-family:'Darkh4';
+  src: url('fonts/Darkh4.eot');
+  src: local('Darkh4'), url('fonts/Darkh4.ttf') format('truetype');
+}
+
+p { font-family: Darkh4, Geneva, serif; font-size: 36px; }
+
+</style>
+
+</head>
+<body>
+
+
+<p>
+    What is your favorite Western movie? This font is now Darkh4. 
+    If you don't see it, make sure the fonts/Darkh4.eot and fonts/Darkh4.ttf files are present,
+    and try another browser.
+</p>
+
+
+
+</body></html>
