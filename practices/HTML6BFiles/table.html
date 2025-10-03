@@ -4,50 +4,54 @@
   <meta charset="UTF-8" />
   <title>HTML Practice 6B - Tables</title>
   <style>
-    /* Page text */
-    body { font-family: system-ui, Arial, sans-serif; }
+    body{ font-family: system-ui, Arial, sans-serif; }
+    .center-wrap{ text-align:center; }
 
-    /* Wrap to center the table block */
-    .center-wrap { text-align: center; }
-
-    /* Table box */
+    /* Table frame */
     .schedule{
-      margin: 0 auto;
-      width: 550px;
-      border: 3px solid #000;     /* thicker outer border */
-      border-collapse: collapse;  /* single grid lines (no double borders) */
+      margin:0 auto;
+      width:550px;
+      border:3px solid #000;     /* heavy outer frame */
+      border-collapse:collapse;  /* single grid lines */
     }
 
-    /* Caption bar (dark green) */
+    /* Caption: green text (no fill) like the PDF */
     caption.cap{
-      caption-side: top;
-      background:#003300;
-      color:#fff;
+      caption-side:top;
+      color:#003300;
       font-weight:700;
-      font-size: 20px;
-      padding: 8px 0;
-      border-bottom: 3px solid #000;
+      font-size:20px;
+      padding:8px 0 10px;
+      background:transparent;
+      border:0;
     }
 
-    /* Column formatting */
+    /* First column is gray (header + body cells) */
     col.course-col{ background:#CCCCCC; width:25%; }
-    col.day-col{ width:15%; } /* 5 x 15% = 75% (25% + 75% = 100%) */
 
-    /* Cells */
+    /* Five day columns share the remaining width */
+    col.day-col{ width:15%; } /* 5 × 15% = 75% */
+
+    /* Cell grid */
     th, td{
-      border: 2px solid #000;   /* strong grid lines like the sample */
-      padding: 8px 10px;        /* cell padding per instructions */
-      vertical-align: middle;
-      text-align: center;
+      border:2px solid #000;
+      padding:8px 10px;
+      vertical-align:middle;
+      text-align:center;
     }
-    /* Left header cells (course names) are left aligned */
-    tbody th[scope="row"]{ text-align:left; }
-
-    /* Day headers (light green) */
+    /* Day header boxes: bright green & thicker borders */
     thead th.day{
-      background:#99FF66;       /* light green from handout */
+      background:#99FF66;
       font-weight:700;
+      border-width:3px;
     }
+    /* "Courses" header box: gray & thicker border */
+    thead th:first-child{
+      background:#CCCCCC;
+      border-width:3px;
+    }
+    /* Left labels in the body are left-aligned */
+    tbody th[scope="row"]{ text-align:left; }
   </style>
 </head>
 <body>
@@ -77,10 +81,10 @@
       <tbody>
         <tr>
           <th scope="row">INFO 1120</th>
-          <td>9-11</td>
           <td></td>
           <td>9-11</td>
           <td></td>
+          <td>9-11</td>
           <td></td>
         </tr>
 
