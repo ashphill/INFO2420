@@ -1,95 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Practice 6A — Tables (Exercises 8.1–8.3)</title>
+  <meta charset="UTF-8" />
+  <title>Practice 6A — Tables (Ex. 8.1–8.3)</title>
   <style>
-    body{font-family: system-ui, Arial, sans-serif; line-height:1.35; padding:24px;}
-    h1{margin-top:0}
-    table{border-collapse:collapse; margin:18px 0; min-width:360px}
-    caption{font-weight:700; margin-bottom:.5rem}
-    /* per book hint */
-    td, th{border:1px solid gray; padding:.45rem .6rem; vertical-align:middle}
-    th{background:#f6f6f6; text-align:left}
+    :root {
+      --border: #999;
+    }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height: 1.35;
+      margin: 32px;
+    }
+    h1 { margin-bottom: 0.25rem; }
+    h2 { margin: 2rem 0 0.75rem; }
+    table {
+      border-collapse: collapse;
+      margin: 0 0 2rem;
+      min-width: 480px;
+    }
+    caption {
+      caption-side: top;
+      font-weight: 700;
+      margin-bottom: .5rem;
+    }
+    td, th {
+      border: 1px solid var(--border);
+      padding: 12px 16px;
+      vertical-align: middle;
+    }
+    thead th { background: #f4f4f4; }
   </style>
 </head>
 <body>
   <h1>Practice 6A — Tables</h1>
 
-  <!-- Exercise 8.1: Making a simple table (Figure 8-5) -->
-  <section>
-    <h2>Exercise 8.1 — Simple Table</h2>
-    <table>
-      <caption>Beatles Albums</caption>
-      <thead>
-        <tr>
-          <th>Album</th>
-          <th>Year</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>Rubber Soul</td>     <td>1965</td></tr>
-        <tr><td>Revolver</td>        <td>1966</td></tr>
-        <tr><td>Sgt. Pepper's</td>   <td>1967</td></tr>
-        <tr><td>The White Album</td> <td>1968</td></tr>
-        <tr><td>Abbey Road</td>      <td>1969</td></tr>
-      </tbody>
-    </table>
-  </section>
+  <!-- Exercise 8.1: Simple Table -->
+  <h2>Exercise 8.1 — Simple Table</h2>
+  <table>
+    <caption>Albums</caption>
+    <thead>
+      <tr>
+        <th scope="col">Album</th>
+        <th scope="col">Year</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Rubber Soul</td><td>1965</td></tr>
+      <tr><td>Revolver</td><td>1966</td></tr>
+      <tr><td>Sgt. Pepper's</td><td>1967</td></tr>
+      <tr><td>The White Album</td><td>1968</td></tr>
+      <tr><td>Abbey Road</td><td>1969</td></tr>
+    </tbody>
+  </table>
 
-  <!-- Exercise 8.2: Column spans (Figure 8-7 schedule) -->
-  <section>
-    <h2>Exercise 8.2 — Column Spans</h2>
-    <table>
-      <caption>Sunday Evening TV</caption>
-      <thead>
-        <tr>
-          <th>7:00pm</th>
-          <th>7:30pm</th>
-          <th>8:00pm</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <!-- first row spans all 3 columns -->
-          <td colspan="3">The Sunday Night Movie</td>
-        </tr>
-        <tr>
-          <td>Perry Mason</td>
-          <td>Candid Camera</td>
-          <td>What's My Line?</td>
-        </tr>
-        <tr>
-          <!-- third row spans all 3 columns -->
-          <td colspan="3">Bonanza</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+  <!-- Exercise 8.2: Column Spans -->
+  <h2>Exercise 8.2 — Column Spans</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>7:00pm</th>
+        <th>7:30pm</th>
+        <th>8:00pm</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td colspan="3">The Sunday Night Movie</td>
+      </tr>
+      <tr>
+        <td>Perry Mason</td>
+        <td>Candid Camera</td>
+        <td>What's My Line?</td>
+      </tr>
+      <tr>
+        <td colspan="3">Bonanza</td>
+      </tr>
+    </tbody>
+  </table>
 
-  <!-- Exercise 8.3: Row spans (Figure 8-9) -->
-  <section>
-    <h2>Exercise 8.3 — Row Spans</h2>
-    <table>
-      <caption>Fruit Table</caption>
-      <tbody>
-        <tr>
-          <td>apples</td>
-          <!-- oranges belongs to the first row but spans downward -->
-          <td rowspan="2">oranges</td>
-          <td>pears</td>
-        </tr>
-        <tr>
-          <td>bananas</td>
-          <!-- pineapple spans rows 2 and 3 -->
-          <td rowspan="2">pineapple</td>
-        </tr>
-        <tr>
-          <td>lychees</td>
-          <!-- cells spanned over do NOT appear here -->
-        </tr>
-      </tbody>
-    </table>
-  </section>
+  <!-- Exercise 8.3: Row Spans -->
+  <h2>Exercise 8.3 — Row Spans</h2>
+  <table>
+    <caption>Fruit Table</caption>
+    <tbody>
+      <tr>
+        <td>apples</td>
+        <td rowspan="3">oranges</td>   <!-- spans all the way to the bottom -->
+        <td>pears</td>
+      </tr>
+      <tr>
+        <td>bananas</td>
+        <td rowspan="2">pineapple</td>
+      </tr>
+      <tr>
+        <td>lychees</td>
+      </tr>
+    </tbody>
+  </table>
 </body>
 </html>
