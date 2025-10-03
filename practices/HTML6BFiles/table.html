@@ -4,59 +4,63 @@
   <meta charset="UTF-8" />
   <title>HTML Practice 6B - Tables</title>
   <style>
-    /* Center the whole table block */
-    .center-wrap { text-align: center; }
-    /* Center in modern browsers */
-    .schedule { margin: 0 auto; width: 550px; border: 2px solid #000; border-collapse: separate; border-spacing: 0; }
-
-    /* Caption special formatting (dark green background) */
-    .cap {
-      caption-side: top;
-      background: #003300;
-      color: #fff;
-      font-weight: bold;
-      padding: 6px 8px;
-      border-bottom: 2px solid #000;
-    }
-
-    /* First column (Courses) formatting via colgroup */
-    col.course-col { background: #CCCCCC; width: 25%; }
-
-    /* The five day columns share one colgroup; table total width is 100% */
-    col.day-col { width: 15%; } /* 5 × 15% = 75%, leaving 25% for course-col */
-
-    /* Head cells for days of the week (light green) */
-    thead th.day { background: #99FF66; }
-
-    /* General cell styling */
-    th, td {
-      border: 1px solid #000;
-      padding: 6px 8px;           /* cell padding */
-      vertical-align: middle;
-    }
-
-    /* Left header cells (course names) */
-    tbody th[scope="row"] { text-align: left; }
-
-    /* Optional: nicer typography */
+    /* Page text */
     body { font-family: system-ui, Arial, sans-serif; }
+
+    /* Wrap to center the table block */
+    .center-wrap { text-align: center; }
+
+    /* Table box */
+    .schedule{
+      margin: 0 auto;
+      width: 550px;
+      border: 3px solid #000;     /* thicker outer border */
+      border-collapse: collapse;  /* single grid lines (no double borders) */
+    }
+
+    /* Caption bar (dark green) */
+    caption.cap{
+      caption-side: top;
+      background:#003300;
+      color:#fff;
+      font-weight:700;
+      font-size: 20px;
+      padding: 8px 0;
+      border-bottom: 3px solid #000;
+    }
+
+    /* Column formatting */
+    col.course-col{ background:#CCCCCC; width:25%; }
+    col.day-col{ width:15%; } /* 5 x 15% = 75% (25% + 75% = 100%) */
+
+    /* Cells */
+    th, td{
+      border: 2px solid #000;   /* strong grid lines like the sample */
+      padding: 8px 10px;        /* cell padding per instructions */
+      vertical-align: middle;
+      text-align: center;
+    }
+    /* Left header cells (course names) are left aligned */
+    tbody th[scope="row"]{ text-align:left; }
+
+    /* Day headers (light green) */
+    thead th.day{
+      background:#99FF66;       /* light green from handout */
+      font-weight:700;
+    }
   </style>
 </head>
 <body>
   <div class="center-wrap">
-    <table class="schedule" cellspacing="0" cellpadding="0">
+    <table class="schedule">
       <caption class="cap">My Class Schedule</caption>
 
-      <!-- Column formatting -->
+      <!-- Column styling -->
       <colgroup>
         <col class="course-col">
       </colgroup>
       <colgroup span="5">
-        <col class="day-col">
-        <col class="day-col">
-        <col class="day-col">
-        <col class="day-col">
-        <col class="day-col">
+        <col class="day-col"><col class="day-col"><col class="day-col"><col class="day-col"><col class="day-col">
       </colgroup>
 
       <thead>
@@ -91,8 +95,7 @@
 
         <tr>
           <th scope="row">INFO 2420</th>
-          <!-- Spans all five day columns -->
-          <td colspan="5" style="text-align:center;">Online Available 24/7</td>
+          <td colspan="5">Online Available 24/7</td>
         </tr>
       </tbody>
     </table>
