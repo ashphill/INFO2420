@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>HTML Practice 6 - Tables</title>
+  <style>
+    /* Center the whole table block */
+    .center-wrap { text-align: center; }
+    /* Center in modern browsers */
+    .schedule { margin: 0 auto; width: 550px; border: 2px solid #000; border-collapse: separate; border-spacing: 0; }
+
+    /* Caption special formatting (dark green background) */
+    .cap {
+      caption-side: top;
+      background: #003300;
+      color: #fff;
+      font-weight: bold;
+      padding: 6px 8px;
+      border-bottom: 2px solid #000;
+    }
+
+    /* First column (Courses) formatting via colgroup */
+    col.course-col { background: #CCCCCC; width: 25%; }
+
+    /* The five day columns share one colgroup; table total width is 100% */
+    col.day-col { width: 15%; } /* 5 × 15% = 75%, leaving 25% for course-col */
+
+    /* Head cells for days of the week (light green) */
+    thead th.day { background: #99FF66; }
+
+    /* General cell styling */
+    th, td {
+      border: 1px solid #000;
+      padding: 6px 8px;           /* cell padding */
+      vertical-align: middle;
+    }
+
+    /* Left header cells (course names) */
+    tbody th[scope="row"] { text-align: left; }
+
+    /* Optional: nicer typography */
+    body { font-family: system-ui, Arial, sans-serif; }
+  </style>
+</head>
+<body>
+  <div class="center-wrap">
+    <table class="schedule" cellspacing="0" cellpadding="0">
+      <caption class="cap">My Class Schedule</caption>
+
+      <!-- Column formatting -->
+      <colgroup>
+        <col class="course-col">
+      </colgroup>
+      <colgroup span="5">
+        <col class="day-col">
+        <col class="day-col">
+        <col class="day-col">
+        <col class="day-col">
+        <col class="day-col">
+      </colgroup>
+
+      <thead>
+        <tr>
+          <th>Courses</th>
+          <th class="day">Monday</th>
+          <th class="day">Tuesday</th>
+          <th class="day">Wednesday</th>
+          <th class="day">Thursday</th>
+          <th class="day">Friday</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th scope="row">INFO 1120</th>
+          <td>9-11</td>
+          <td></td>
+          <td>9-11</td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <th scope="row">MATH 1010</th>
+          <td></td>
+          <td></td>
+          <td>12-1</td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <th scope="row">INFO 2420</th>
+          <!-- Spans all five day columns -->
+          <td colspan="5" style="text-align:center;">Online Available 24/7</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
