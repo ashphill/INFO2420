@@ -4,67 +4,61 @@
   <meta charset="UTF-8" />
   <title>HTML Practice 6B - Tables</title>
   <style>
-    body{ font-family: system-ui, Arial, sans-serif; }
-    .center-wrap{ text-align:center; }
+    /* Center the whole table block */
+    .center-wrap { text-align: center; }
 
-    /* Table frame */
+    /* Table box */
     .schedule{
-      margin:0 auto;
-      width:550px;
-      border:3px solid #000;     /* heavy outer frame */
-      border-collapse:collapse;  /* single grid lines */
+      margin: 0 auto;
+      width: 550px;
+      border: 2px solid #000;
+      border-collapse: separate;
+      border-spacing: 0;
     }
 
-    /* Caption: green text (no fill) like the PDF */
-    caption.cap{
-      caption-side:top;
-      color:#003300;
-      font-weight:700;
-      font-size:20px;
-      padding:8px 0 10px;
-      background:transparent;
-      border:0;
+    /* Caption (dark green bar) */
+    .cap{
+      caption-side: top;
+      background: #003300;
+      color: #fff;
+      font-weight: bold;
+      padding: 6px 8px;
+      border-bottom: 2px solid #000;
     }
 
-    /* First column is gray (header + body cells) */
+    /* Column styling via colgroup */
     col.course-col{ background:#CCCCCC; width:25%; }
+    col.day-col{ width:15%; } /* 5 × 15% = 75%; 25% for course column */
 
-    /* Five day columns share the remaining width */
-    col.day-col{ width:15%; } /* 5 × 15% = 75% */
+    /* Day headers (light green) */
+    thead th.day{ background:#99FF66; }
 
-    /* Cell grid */
-    th, td{
-      border:2px solid #000;
-      padding:8px 10px;
+    /* General cell look */
+    th,td{
+      border:1px solid #000;
+      padding:6px 8px;   /* cellpadding */
       vertical-align:middle;
-      text-align:center;
     }
-    /* Day header boxes: bright green & thicker borders */
-    thead th.day{
-      background:#99FF66;
-      font-weight:700;
-      border-width:3px;
-    }
-    /* "Courses" header box: gray & thicker border */
-    thead th:first-child{
-      background:#CCCCCC;
-      border-width:3px;
-    }
-    /* Left labels in the body are left-aligned */
     tbody th[scope="row"]{ text-align:left; }
+
+    body{ font-family: system-ui, Arial, sans-serif; }
   </style>
 </head>
 <body>
   <div class="center-wrap">
-    <table class="schedule">
+    <table class="schedule" cellspacing="0" cellpadding="0">
       <caption class="cap">My Class Schedule</caption>
 
-      <!-- Column styling -->
+      <!-- Column formats -->
       <colgroup>
         <col class="course-col">
       </colgroup>
       <colgroup span="5">
-        <col class="day-col"><col class="day-col"><col class="day-col"><col class="day-col"><col class="day-col">
+        <col class="day-col">
+        <col class="day-col">
+        <col class="day-col">
+        <col class="day-col">
+        <col class="day-col">
       </colgroup>
 
       <thead>
@@ -79,27 +73,27 @@
       </thead>
 
       <tbody>
+        <!-- INFO 1120 -->
         <tr>
           <th scope="row">INFO 1120</th>
-          <td></td>
-          <td>9-11</td>
-          <td></td>
-          <td>9-11</td>
-          <td></td>
+          <td></td>             <!-- Monday -->
+          <td>9-11</td>         <!-- Tuesday -->
+          <td></td>             <!-- Wednesday -->
+          <td>9-11</td>         <!-- Thursday -->
+          <td rowspan="2"></td> <!-- Friday box shared with MATH 1010 -->
         </tr>
 
+        <!-- MATH 1010 -->
         <tr>
           <th scope="row">MATH 1010</th>
-          <td></td>
-          <td></td>
-          <td>12-1</td>
-          <td></td>
-          <td></td>
+          <td colspan="4">12-1</td> <!-- One box from Monday to Thursday -->
+          <!-- Friday cell is merged above via rowspan -->
         </tr>
 
+        <!-- INFO 2420 -->
         <tr>
           <th scope="row">INFO 2420</th>
-          <td colspan="5">Online Available 24/7</td>
+          <td colspan="5" style="text-align:center;">Online Available 24/7</td>
         </tr>
       </tbody>
     </table>
