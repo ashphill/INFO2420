@@ -4,8 +4,17 @@
   <meta charset="utf-8" />
   <title>About Us: Extreme Honeymoons</title>
 
-  <!-- Embedded CSS required by the assignment -->
+  <!-- Embedded CSS required by the assignment (use this exact block on BOTH pages) -->
   <style>
+    /* ---- Embedded font (put the files + license in Project4/Fonts) ---- */
+    @font-face{
+      font-family:"ModernAntiqua";
+      src: url("Fonts/ModernAntiqua.eot");
+      src: url("Fonts/ModernAntiqua.eot?#iefix") format("embedded-opentype"),
+           url("Fonts/ModernAntiqua.otf") format("opentype"),
+           url("Fonts/ModernAntiqua.ttf") format("truetype");
+      font-weight: normal; font-style: normal;
+    }
 
     :root{
       --ink:#222;
@@ -26,21 +35,43 @@
     h2{color:var(--brand)}
     hr{border:0;border-top:1px solid #ddd;margin:24px 0}
 
-    /* Images floated with padding (as required) */
+    /* Images floated with padding */
     .img-left{float:left;margin:0 14px 10px 0;padding:6px;background:#fafafa;border:1px solid #e6e6e6;border-radius:6px}
     .img-right{float:right;margin:0 0 10px 14px;padding:6px;background:#fafafa;border:1px solid #e6e6e6;border-radius:6px}
 
-    /* Links states (assignment: distinguishable states) */
+    /* Links states */
     a:link{color:var(--accent)}
     a:visited{color:#6a3bf5}
     a:hover{color:#0b3dd6;text-decoration:underline}
     a:active{color:#c20b0b}
 
-    /* small helpers */
     .clear{clear:both}
     .lede{font-size:1.1rem;color:var(--muted)}
     footer{margin:48px 0 24px 0;color:var(--muted);text-align:center}
     .pill{display:inline-block;background:var(--brand-light);color:#083b22;font-weight:700;padding:2px 8px;border-radius:999px}
+
+    /* ===== Required TABLE styling (use on BOTH pages) ===== */
+    table{width:100%;border-collapse:collapse}
+    caption{
+      font-family:"ModernAntiqua", serif;
+      font-size:1.25rem;
+      background:#f2f5f9;
+      padding:.6rem 1rem;
+      border-radius:10px;
+      margin-bottom:.5rem;
+      letter-spacing:.3px;
+    }
+    th{
+      text-align:left;
+      background:#2f557f; color:#fff;
+      padding:.55rem .75rem;
+      font-weight:600;
+    }
+    td{
+      background:#fbfdff; color:#222;
+      padding:.5rem .75rem;
+      border-bottom:1px solid #dbe6f5;
+    }
   </style>
 </head>
 <body>
@@ -74,24 +105,32 @@
     <hr>
 
     <h2 id="adventures">Honeymoon Adventures</h2>
-    <img class="img-left" src="Extremehoneymoons/AboutUs/ScubaSmall.jpg" alt="Scuba couple" width="250" height="166">
-    <ul>
-      <li>Ice Climbing on Bridal Veil Falls: 1–2 day tour</li>
-      <li>Bungee Jumping off Dead Horse Point: 2–3 day tour</li>
-      <li>Bow Hunting or Pursuing Cougars in Manti-La Sal NF: 1-week tour</li>
-      <li>Parasailing from the top of Mt. Timpanogos: 1–2 day tour</li>
-      <li>4WD Safari Rendezvous in Moab: 1-week tour</li>
-      <li>Swimming with the carp in Utah Lake: 1–2 day tour</li>
-      <li>Heliskiing on Kings Peak: 1–2 day tour</li>
-      <li>Bobsled & Ski Jump at Utah Olympic Park: 2–3 day tour</li>
-    </ul>
+
+    <!-- REQUIRED TABLE (replaces the simple bullet list) -->
+    <table>
+      <caption>Where we are today… — Adventure Tours</caption>
+      <thead>
+        <tr><th>Activity</th><th>Tour Length</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Ice Climbing on Bridal Veil Falls</td><td>1–2 day Tour</td></tr>
+        <tr><td>Bungee Jumping off Dead Horse Point</td><td>2–3 day Tour</td></tr>
+        <tr><td>Cougar Bow Hunt — Manti-LaSal NF</td><td>1 week Tour</td></tr>
+        <tr><td>Parasailing from Mt. Timpanogos</td><td>1–2 day Tour</td></tr>
+        <tr><td>4WD Safari Rendezvous in Moab</td><td>1 week Tour</td></tr>
+        <tr><td>Swim with Carp in Utah Lake</td><td>1–2 day Tour</td></tr>
+        <tr><td>Heliskiing on Kings Peak</td><td>1–2 day Tour</td></tr>
+        <tr><td>Bobsled &amp; Ski Jump — Utah Olympic Park</td><td>2–3 day Tour</td></tr>
+      </tbody>
+    </table>
+
     <div class="clear"></div>
     <p><a href="#top">Return to Top</a></p>
     <hr>
 
     <h2 id="unique">What Makes Us Unique</h2>
     <img class="img-right" src="Extremehoneymoons/AboutUs/iStockParaglideSm.jpg" alt="Paragliding" width="250" height="203">
-    <p>Couples who want to truly know each other choose an extreme honeymoon. We handle the logistics—gear delivery, transportation, meals, and lessons—so you focus on the experience. Choose a guided package or pitch your own daring idea and we’ll build it. Just don’t forget to sign the waiver!”</p>
+    <p>Couples who want to truly know each other choose an extreme honeymoon. We handle the logistics—gear delivery, transportation, meals, and lessons—so you focus on the experience. Choose a guided package or pitch your own daring idea and we’ll build it. Just don’t forget to sign the waiver!</p>
     <p><a href="#top">Return to Top</a></p>
     <hr>
 
@@ -105,7 +144,7 @@
   </main>
 
   <footer>
-    © Extreme Honeymoons • <a href="tribute.html">Read Tributes</a>
+    © Extreme Honeymoons • <a href="Tributes.html">Read Tributes</a>
   </footer>
 </body>
 </html>
