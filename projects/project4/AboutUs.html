@@ -6,7 +6,7 @@
 
   <!-- Embedded CSS required by the assignment (use this exact block on BOTH pages) -->
   <style>
-    /* ---- Embedded font (put the files + license in Project4/Fonts) ---- */
+    /* ---- Embedded fonts ---- */
     @font-face{
       font-family:"ModernAntiqua";
       src: url("Fonts/ModernAntiqua.eot");
@@ -14,6 +14,13 @@
            url("Fonts/ModernAntiqua.otf") format("opentype"),
            url("Fonts/ModernAntiqua.ttf") format("truetype");
       font-weight: normal; font-style: normal;
+    }
+    /* New: Kh Kangrey Regular (path you provided) */
+    @font-face{
+      font-family:"KHKangrey";
+      src: url("fonts/Kh Kangrey Regular.ttf") format("truetype");
+      /* If needed, you can URL-encode the space: url("fonts/Kh%20Kangrey%20Regular.ttf") */
+      font-weight: 400; font-style: normal; font-display: swap;
     }
 
     :root{
@@ -39,7 +46,7 @@
     .img-left{float:left;margin:0 14px 10px 0;padding:6px;background:#fafafa;border:1px solid #e6e6e6;border-radius:6px}
     .img-right{float:right;margin:0 0 10px 14px;padding:6px;background:#fafafa;border:1px solid #e6e6e6;border-radius:6px}
 
-    /* Links states */
+    /* Link states */
     a:link{color:var(--accent)}
     a:visited{color:#6a3bf5}
     a:hover{color:#0b3dd6;text-decoration:underline}
@@ -53,7 +60,7 @@
     /* ===== Required TABLE styling (use on BOTH pages) ===== */
     table{width:100%;border-collapse:collapse}
     caption{
-      font-family:"ModernAntiqua", serif;
+      font-family:"ModernAntiqua", serif; /* keep caption in ModernAntiqua */
       font-size:1.25rem;
       background:#f2f5f9;
       padding:.6rem 1rem;
@@ -72,6 +79,11 @@
       padding:.5rem .75rem;
       border-bottom:1px solid #dbe6f5;
     }
+
+    .eh-table th, .eh-table td{
+      font-family:"KHKangrey", serif;
+    }
+    
   </style>
 </head>
 <body>
@@ -107,7 +119,7 @@
     <h2 id="adventures">Honeymoon Adventures</h2>
 
     <!-- REQUIRED TABLE (replaces the simple bullet list) -->
-    <table>
+    <table class="eh-table">
       <caption>Adventure Tours</caption>
       <thead>
         <tr><th>Activity</th><th>Tour Length</th></tr>
