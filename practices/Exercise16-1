@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Exercise 16-1 — Flexbox Nav</title>
+<style>
+:root { --ink:#0f172a; }
+body { margin:0; font:16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--ink); }
+header { background:linear-gradient(90deg,#4f46e5,#06b6d4); color:#fff; padding:20px; }
+h1 { margin:0; }
+nav ul { /* Step 1: turn the list into a flex row */
+display:flex; /* makes li children flex items */
+justify-content:center;/* Step 3: center the menu */
+list-style:none; gap:.75rem; margin:12px 0; padding:0;
+}
+nav a { /* Button styling similar to book */
+display:block; text-decoration:none; color:var(--ink);
+border:1px solid var(--ink); border-radius:8px;
+padding:.55rem .9rem; background:#fff;
+}
+nav a:hover { background:var(--ink); color:#fff; }
+main { max-width:900px; margin:20px auto; padding:0 16px; }
+</style>
+</head>
+<body>
+<header>
+<h1>Black Goose Bakery</h1>
+</header>
+<nav aria-label="Primary">
+<ul>
+<li><a href="#">Menu</a></li>
+<li><a href="#">News</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</nav>
+<main>
+<p>Exercise 16-1 complete: the list items are horizontal via <code>display:flex</code> and centered with <code>justify-content:center</code>.</p>
+</main>
+</body>
+</html>

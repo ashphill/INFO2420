@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Exercise 16-2 — Flexible Online Menu</title>
+<style>
+:root{ --border:#f59e0b; --muted:#64748b; }
+body{ margin:0; font:16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+.menu{ /* Flex container for the cards */
+display:flex; /* Step 1 */
+flex-wrap:wrap; /* Step 4/5: allow wrapping to multiple rows */
+justify-content:center; /* Step 6: try center/start/space-between */
+gap:18px; border:3px solid var(--border); border-radius:12px; padding:18px; margin:22px; background:#fffbeb;
+}
+.menu section{ /* Each menu item (fixed width as in book) */
+width:240px; background:#fff; border:1px solid #e5e7eb; border-radius:12px; overflow:hidden;
+display:flex; flex-direction:column; /* Preview for nested flex in 16-3 */
+}
+.photo{ height:140px; background:#ddd; }
+h3{ margin:12px 12px 6px; font-size:1.05rem; }
+p{ margin:0 12px 12px; color:var(--muted); }
+.price{ margin-top:auto; padding:10px 12px; border-top:1px solid #eee; display:flex; justify-content:flex-end; }
+.tag{ background:#fde68a; padding:.2rem .5rem; border-radius:6px; font-weight:600; }
+</style>
+</head>
+<body>
+<main class="menu">
+<section>
+<div class="photo"></div>
+<h3>Roast Chicken Panini</h3>
+<p>Herb chicken, provolone, roasted peppers.</p>
+<div class="price"><span class="tag">$12.50</span></div>
+</section>
+<section>
+<div class="photo"></div>
+<h3>Avocado Toast</h3>
+<p>Sourdough, smashed avocado, chili flake.</p>
+<div class="price"><span class="tag">$9.00</span></div>
+</section>
+<section>
+<div class="photo"></div>
+<h3>Turkey Club</h3>
+<p>Smoked turkey, bacon, tomato, aioli.</p>
+<div class="price"><span class="tag">$11.25</span></div>
+</section>
+<section>
+<div class="photo"></div>
+<h3>Veggie Wrap</h3>
+<p>Hummus, cucumber, greens, vinaigrette.</p>
+<div class="price"><span class="tag">$10.25</span></div>
+</section>
+</main>
+</body>
+</html>
