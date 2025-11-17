@@ -2,106 +2,138 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Project 6 — Graphics</title>
+  <title>Extreme Honeymoon – Graphics</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <style>
-    /* --- Page framing (simple, assignment‑friendly) --- */
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#f3e1bb;margin:0;color:#222}
-    .wrap{max-width:960px;margin:40px auto;padding:24px}
-    h1{font-weight:700;letter-spacing:.4px;margin:0 0 8px}
-    .muted{color:#555;margin:0 0 24px}
-
-    /* --- Print button & Logo blocks --- */
-    .row{display:flex;gap:16px;align-items:center;justify-content:center;margin:24px 0}
-
-    /* --- Image‑swap containers (from spec) --- */
-    #thumbs, #image{width:700px;border:1px solid #000;text-align:center;margin:0 auto;color:#000;background:#eee;padding:5px}
-    #thumbs{margin-top:10px}
-    #thumbs img{border:1px solid #000;margin:5px;cursor:pointer}
-    #image{height:400px;display:flex;align-items:center;justify-content:center;flex-direction:column}
-    #image img{max-width:100%;max-height:340px}
-    .caption{font-style:italic;margin-top:8px}
-
-    /* Demo footer image area */
-    .bg-demo{margin:28px auto;text-align:center}
-    .bg-demo img{max-width:700px;border:1px dashed #999}
-  </style>
-  <script>
-    // --- Preload images for smooth rollovers ---
-    function preloadImages(){
-      const sources = [
-        'Images/Print2.jpg',
-        'Images/Logo2.jpg'
-      ];
-      for(const src of sources){ const img = new Image(); img.src = src; }
-
-      // Preload fullsize images for swap too
-      imgArray.forEach(src => { const i = new Image(); i.src = src; });
+    /* Page background + main area */
+    body{
+      margin:0;
+      padding:0;
+      background:#f3d39b;          /* warm tan like example */
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    #page{
+      width:900px;
+      margin:0 auto;
+      text-align:center;
+      padding-top:20px;
     }
 
-    // --- Image swap data (update filenames/titles to yours) ---
+    /* Print button + logo */
+    #printBtn img,
+    #logo img{
+      display:block;
+      margin:0 auto;
+    }
+    #printBtn{margin-bottom:10px;}
+    #logo{margin-bottom:40px;}
+
+    /* Thumbnails row */
+    #thumbs{
+      width:700px;
+      margin:0 auto 20px auto;
+      text-align:center;
+    }
+    #thumbs img{
+      border:8px solid #e3e19b;     /* light frame around thumbs */
+      margin:0 8px;
+      cursor:pointer;
+      width:170px;
+      height:110px;
+      object-fit:cover;
+    }
+
+    /* Large image + caption */
+    #imageBox{
+      width:700px;
+      margin:0 auto 20px auto;
+    }
+    #imageBox img{
+      width:100%;
+      max-height:380px;
+      object-fit:cover;
+      display:block;
+      margin:0 auto;
+    }
+    #caption{
+      margin-top:8px;
+      font-weight:bold;
+    }
+  </style>
+
+  <script>
+    /* LARGE IMAGES (HONEYMOON FOLDER) */
     const imgArray = [
-      'Images/fullsize/Image1Lg.jpg',
-      'Images/fullsize/Image2Lg.jpg',
-      'Images/fullsize/Image3Lg.jpg',
-      'Images/fullsize/Image4Lg.jpg'
+      "Honeymoon/CoupleBike1Lg.jpg",
+      "Honeymoon/CoupleBike2Lg.jpg",
+      "Honeymoon/CoupleBike3Lg.jpg",
+      "Honeymoon/SkiCoupleLg.jpg"
     ];
 
     const titleArray = [
-      'Couple Biking',
-      'Sunset Portrait',
-      'Dirt Bikes',
-      'Snow Skiing'
+      "Couple Biking",
+      "Couple at Sunset",
+      "Couple Biking on Dirt Road",
+      "Couple Skiing"
     ];
 
-    // Swap helper
-    function showImage(index){
-      const big = document.getElementById('big');
-      const cap = document.getElementById('caption');
-      big.src = imgArray[index];
-      big.alt = titleArray[index];
-      cap.textContent = titleArray[index];
+    function preloadImages(){
+      const preload = [
+        "Images/Print2.jpg",
+        "Images/Logo2.jpg",
+        ...imgArray
+      ];
+      preload.forEach(src => { const i = new Image(); i.src = src; });
+    }
+
+    function showImage(i){
+      const big = document.getElementById("bigImg");
+      const cap = document.getElementById("caption");
+      big.src = imgArray[i];
+      big.alt = titleArray[i];
+      cap.textContent = titleArray[i];
     }
   </script>
 </head>
 
 <body onload="preloadImages()">
-  <div class="wrap">
-    <h1>Graphics Page</h1>
-    <p class="muted">Rollovers + Image Swap (Project 6)</p>
+  <div id="page">
 
-    <!-- Print Button Rollover -->
-    <div class="row">
-      <a href="#" onmouseover="document.getElementById('print').src='Images/Print2.jpg';" onmouseout="document.getElementById('print').src='Images/Print1.jpg';">
-        <img id="print" src="Images/Print1.jpg" alt="Print Page" width="200" height="50" />
+    <!-- PRINT BUTTON ROLLOVER -->
+    <div id="printBtn">
+      <a href="#"
+         onmouseover="document.getElementById('printImg').src='Images/Print2.jpg';"
+         onmouseout="document.getElementById('printImg').src='Images/Print1.jpg';">
+        <img id="printImg" src="Images/Print1.jpg" alt="Print Page">
       </a>
     </div>
 
-    <!-- Logo Rollover (use your Project 5 logo sizes) -->
-    <div class="row">
-      <a href="#" onmouseover="document.getElementById('logo').src='Images/Logo2.jpg';" onmouseout="document.getElementById('logo').src='Images/Logo1.jpg';">
-        <img id="logo" src="Images/Logo1.jpg" alt="Company Logo" width="200" height="200" />
+    <!-- LOGO ROLLOVER -->
+    <div id="logo">
+      <a href="#"
+         onmouseover="document.getElementById('logoImg').src='Images/Logo2.jpg';"
+         onmouseout="document.getElementById('logoImg').src='Images/Logo1.jpg';">
+        <img id="logoImg" src="Images/Logo1.jpg" alt="Extreme Honeymoon Logo">
       </a>
     </div>
 
-    <!-- Image Swap Thumbnails -->
+    <!-- THUMBNAILS -->
     <div id="thumbs">
-      <img src="Images/thumbnails/Image1Sm.jpg" width="150" height="100" alt="Couple Biking" onmouseover="showImage(0)" />
-      <img src="Images/thumbnails/Image2Sm.jpg" width="150" height="100" alt="Sunset Portrait" onmouseover="showImage(1)" />
-      <img src="Images/thumbnails/Image3Sm.jpg" width="150" height="100" alt="Dirt Bikes" onmouseover="showImage(2)" />
-      <img src="Images/thumbnails/Image4Sm.jpg" width="150" height="100" alt="Snow Skiing" onmouseover="showImage(3)" />
+      <img src="Honeymoon/CoupleBike1Lg.jpg" alt="Couple Biking"
+           onmouseover="showImage(0)">
+      <img src="Honeymoon/CoupleBike2Lg.jpg" alt="Couple at Sunset"
+           onmouseover="showImage(1)">
+      <img src="Honeymoon/CoupleBike3Lg.jpg" alt="Couple Biking on Dirt Road"
+           onmouseover="showImage(2)">
+      <img src="Honeymoon/SkiCoupleLg.jpg" alt="Couple Skiing"
+           onmouseover="showImage(3)">
     </div>
 
-    <!-- Large Swapped Image + Caption -->
-    <div id="image" style="margin-top:10px;">
-      <img id="big" src="Images/fullsize/Image1Lg.jpg" alt="Couple Biking" />
-      <div class="caption" id="caption">Couple Biking</div>
-    </div>
-
-    <!-- Repeatable 2‑column background graphic (placed as an <img> for now per spec) -->
-    <div class="bg-demo">
-      <p class="muted">Two‑column background image (will be used in Project 7):</p>
-      <img src="Images/2colback.jpg" alt="Two column background preview" width="700" height="150" />
+    <!-- LARGE IMAGE + CAPTION -->
+    <div id="imageBox">
+      <img id="bigImg" src="Honeymoon/CoupleBike1Lg.jpg" alt="Couple Biking">
+      <div id="caption">Couple Biking</div>
     </div>
 
   </div>
