@@ -16,38 +16,62 @@
     #page{
       width:900px;
       margin:0 auto;
+      padding:20px 0;
       text-align:center;
-      padding-top:20px;
     }
 
-    /* Print button + logo */
-    #printBtn img,
+    /* Top bar: print button + logo in one row */
+    #topBar{
+      width:900px;
+      margin:0 auto 25px auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    #printBtn img{
+      display:block;
+      border:3px solid #8b5a1f;
+      background:#fff;
+    }
     #logo img{
       display:block;
       margin:0 auto;
     }
-    #printBtn{margin-bottom:10px;}
-    #logo{margin-bottom:40px;}
 
-    /* Thumbnails row */
-    #thumbs{
-      width:700px;
-      margin:0 auto 20px auto;
-      text-align:center;
+    /* Two-column content area */
+    #content{
+      width:900px;
+      margin:0 auto;
+      display:flex;
+    }
+
+    /* LEFT COLUMN: thumbs + light background */
+    #leftCol{
+      width:260px;
+      background:#f9e7b8;   /* column 1 background */
+      padding:10px;
+      box-sizing:border-box;
     }
     #thumbs img{
-      border:8px solid #e3e19b;     /* light frame around thumbs */
-      margin:0 8px;
+      border:4px solid #e3e19b;
+      margin:6px 0;
       cursor:pointer;
-      width:170px;
-      height:110px;
+      width:220px;
+      height:140px;
       object-fit:cover;
+      display:block;
     }
 
-    /* Large image + caption */
+    /* RIGHT COLUMN: big image + slightly darker background */
+    #rightCol{
+      flex:1;
+      background:#e1c27f;   /* column 2 background */
+      padding:10px;
+      box-sizing:border-box;
+    }
     #imageBox{
-      width:700px;
-      margin:0 auto 20px auto;
+      width:100%;
+      margin:0 auto 10px auto;
     }
     #imageBox img{
       width:100%;
@@ -80,6 +104,7 @@
 
     function preloadImages(){
       const preload = [
+        "Images/Print1.jpg",
         "Images/Print2.jpg",
         "Images/EXHoneymoonsLogo.png",
         ...imgArray
@@ -100,45 +125,52 @@
 <body onload="preloadImages()">
   <div id="page">
 
-    <!-- PRINT BUTTON ROLLOVER -->
-    <div id="printBtn">
-      <a href="#"
+    <!-- TOP BAR: PRINT BUTTON + LOGO -->
+    <div id="topBar">
+
+      <!-- PRINT BUTTON WITH ROLLOVER + PRINT FUNCTION -->
+      <a id="printBtn" href="#"
+         onclick="window.print(); return false;"
          onmouseover="document.getElementById('printImg').src='Images/Print2.jpg';"
          onmouseout="document.getElementById('printImg').src='Images/Print1.jpg';">
         <img id="printImg" src="Images/Print1.jpg" alt="Print Page">
       </a>
+
+      <!-- LOGO -->
+      <div id="logo">
+        <img id="logoImg"
+             src="Images/EXHoneymoonsLogo.png"
+             alt="Extreme Honeymoon Logo"
+             style="width:220px; height:auto;">
+      </div>
+
     </div>
 
-    <!-- LOGO ROLLOVER -->
-    <div id="logo">
-      <a href="#"
-         onmouseover="document.getElementById('logoImg').src='Images/Logo2.jpg';"
-         onmouseout="document.getElementById('logoImg').src='Images/Logo1.jpg';">
-         <div id="logo">
-            <img id="logoImg" 
-                 src="Images/EXHoneymoonsLogo.png" 
-                 alt="Extreme Honeymoon Logo"
-                 style="width:220px; height:auto;">
+    <!-- TWO-COLUMN CONTENT -->
+    <div id="content">
+
+      <!-- LEFT COLUMN: THUMBNAILS -->
+      <div id="leftCol">
+        <div id="thumbs">
+          <img src="Honeymoon/CoupleBike1Lg.jpg" alt="Couple Biking"
+               onmouseover="showImage(0)">
+          <img src="Honeymoon/CoupleBike2Lg.jpg" alt="Couple at Sunset"
+               onmouseover="showImage(1)">
+          <img src="Honeymoon/CoupleBike3Lg.jpg" alt="Couple Biking on Dirt Road"
+               onmouseover="showImage(2)">
+          <img src="Honeymoon/SkiCoupleLg.jpg" alt="Couple Skiing"
+               onmouseover="showImage(3)">
         </div>
-      </a>
-    </div>
+      </div>
 
-    <!-- THUMBNAILS -->
-    <div id="thumbs">
-      <img src="Images/CoupleBike1Lg.jpg" alt="Couple Biking"
-           onmouseover="showImage(0)">
-      <img src="Images/CoupleBike2Lg.jpg" alt="Couple at Sunset"
-           onmouseover="showImage(1)">
-      <img src="Images/CoupleBike3Lg.jpg" alt="Couple Biking on Dirt Road"
-           onmouseover="showImage(2)">
-      <img src="Images/SkiCoupleLg.jpg" alt="Couple Skiing"
-           onmouseover="showImage(3)">
-    </div>
+      <!-- RIGHT COLUMN: LARGE IMAGE + CAPTION -->
+      <div id="rightCol">
+        <div id="imageBox">
+          <img id="bigImg" src="Honeymoon/CoupleBike1Lg.jpg" alt="Couple Biking">
+          <div id="caption">Couple Biking</div>
+        </div>
+      </div>
 
-    <!-- LARGE IMAGE + CAPTION -->
-    <div id="imageBox">
-      <img id="bigImg" src="Honeymoon/CoupleBike1Lg.jpg" alt="Couple Biking">
-      <div id="caption">Couple Biking</div>
     </div>
 
   </div>
