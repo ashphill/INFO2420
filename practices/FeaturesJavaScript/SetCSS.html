@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Set CSS with JavaScript</title>
+
+  <script type="text/javascript">
+    function changecolor(color) {
+      // grab the heading with id="Top"
+      var myHeading = document.getElementById("Top");
+
+      // change page background
+      document.body.style.backgroundColor = color;
+
+      // Step 8: use if / else if / else to change the h1 style
+      if (color === "red") {
+        myHeading.style.color = "white";
+        myHeading.innerHTML = "Red – stop and pay attention!";
+      } else if (color === "lightblue") {
+        myHeading.style.color = "navy";
+        myHeading.innerHTML = "Blue – cool and calm.";
+      } else if (color === "lightgreen") {
+        myHeading.style.color = "darkgreen";
+        myHeading.innerHTML = "Green – ready to go.";
+      } else {
+        myHeading.style.color = "black";
+        myHeading.innerHTML = "JavaScript SetCSS Example";
+      }
+    }
+  </script>
+</head>
+
+<!-- onLoad calls changecolor once when the page is loaded -->
+<body onload="changecolor('white')">
+
+  <h1 id="Top">JavaScript SetCSS Example</h1>
+
+  <form>
+    <input type="button" value="Red"
+           onclick="changecolor('red')">
+    <input type="button" value="Blue"
+           onclick="changecolor('lightblue')">
+    <input type="button" value="Green"
+           onclick="changecolor('lightgreen')">
+    <input type="button" value="Reset"
+           onclick="changecolor('white')">
+  </form>
+</body>
+</html>

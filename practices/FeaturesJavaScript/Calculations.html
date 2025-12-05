@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript Calculations</title>
+
+  <script type="text/javascript">
+    // Basic calculations
+    var secs_per_min = 60;
+    var mins_per_hour = 60;
+    var hours_per_day = 24;
+    var days_per_year = 365;
+
+    var secs_per_year = secs_per_min * mins_per_hour * hours_per_day * days_per_year;
+
+    document.writeln("Seconds in a year: " + secs_per_year + "<br><br>");
+
+    // ----- Step 5: Clue-style madlib -----
+    var suspect  = prompt("Enter the suspect's name (e.g., Colonel Mustard):");
+    var weapon   = prompt("Enter a weapon (e.g., candlestick):");
+    var room     = prompt("Enter a room (e.g., library):");
+
+    document.writeln("Clue Mystery:<br>");
+    document.writeln("It was " + suspect + " in the " + room +
+                     " with the " + weapon + "!" + "<br>");
+  </script>
+</head>
+
+<body>
+</body>
+</html>

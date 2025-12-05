@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Event Handler Example</title>
+
+  <script type="text/javascript">
+    function MsgBox(textString) {
+      alert(textString);
+      // clear the textbox after showing the message
+      document.myForm.userText.value = "";
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Event Handler Demo</h1>
+
+  <form name="myForm">
+    <input type="text" name="userText" size="40">
+    <!-- CHANGED from onClick to onMouseOver per instructions -->
+    <input type="button" value="Show Me"
+           onmouseover="MsgBox(this.form.userText.value)">
+  </form>
+</body>
+</html>
