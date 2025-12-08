@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>About Us: Extreme Honeymoons</title>
+
+  <style>
+    /* ---- Embedded fonts ---- */
+    @font-face{
+      font-family:"ModernAntiqua";
+      src: url("Fonts/ModernAntiqua.eot");
+      src: url("Fonts/ModernAntiqua.eot?#iefix") format("embedded-opentype"),
+           url("Fonts/ModernAntiqua.otf") format("opentype"),
+           url("Fonts/ModernAntiqua.ttf") format("truetype");
+      font-weight: normal; font-style: normal;
+    }
+    /* New: Kh Kangrey Regular (path you provided) */
+    @font-face{
+      font-family:"KHKangrey";
+      src: url("fonts/Kh Kangrey Regular.ttf") format("truetype");
+      /* If needed, you can URL-encode the space: url("fonts/Kh%20Kangrey%20Regular.ttf") */
+      font-weight: 400; font-style: normal; font-display: swap;
+    }
+
+    :root{
+      --ink:#222;
+      --muted:#666;
+      --paper:#fff;
+      --brand:#0B4F2D;
+      --brand-light:#9FE870;
+      --accent:#1756FF;
+    }
+
+    html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+    header{background:var(--brand);color:#fff;padding:20px 16px;border-bottom:6px solid #00000020}
+    header h1{margin:0;font-weight:800;letter-spacing:.3px}
+    header nav{margin-top:8px;font-weight:600}
+    header nav a{color:#fff;text-decoration:none;margin-right:10px;padding:4px 6px;border-radius:6px}
+    header nav a:hover{background:#ffffff22}
+    main{max-width:980px;margin:28px auto;padding:0 16px}
+    h2{color:var(--brand)}
+    hr{border:0;border-top:1px solid #ddd;margin:24px 0}
+
+    /* Images floated with padding */
+    .img-left{float:left;margin:0 14px 10px 0;padding:6px;background:#fafafa;border:1px solid #e6e6e6;border-radius:6px}
+    .img-right{float:right;margin:0 0 10px 14px;padding:6px;background:#fafafa;border:1px solid #e6e6e6;border-radius:6px}
+
+    /* Link states */
+    a:link{color:var(--accent)}
+    a:visited{color:#6a3bf5}
+    a:hover{color:#0b3dd6;text-decoration:underline}
+    a:active{color:#c20b0b}
+
+    .clear{clear:both}
+    .lede{font-size:1.1rem;color:var(--muted)}
+    footer{margin:48px 0 24px 0;color:var(--muted);text-align:center}
+    .pill{display:inline-block;background:var(--brand-light);color:#083b22;font-weight:700;padding:2px 8px;border-radius:999px}
+
+    /* ===== Required TABLE styling (use on BOTH pages) ===== */
+    table{width:100%;border-collapse:collapse}
+    caption{
+      font-family:"ModernAntiqua", serif; /* keep caption in ModernAntiqua */
+      font-size:1.25rem;
+      background:#f2f5f9;
+      padding:.6rem 1rem;
+      border-radius:10px;
+      margin-bottom:.5rem;
+      letter-spacing:.3px;
+    }
+    th{
+      text-align:left;
+      background:#2f557f; color:#fff;
+      padding:.55rem .75rem;
+      font-weight:600;
+    }
+    td{
+      background:#fbfdff; color:#222;
+      padding:.5rem .75rem;
+      border-bottom:1px solid #dbe6f5;
+    }
+
+    .eh-table th, .eh-table td{
+      font-family:"KHKangrey", serif;
+    }
+
+  </style>
+</head>
+<body>
+  <a id="top"></a>
+  <header>
+    <h1>About Us — <span class="pill">Extreme Honeymoons</span></h1>
+    <nav aria-label="Jump menu">
+      <a href="#beginnings">In the Beginning</a>
+      <a href="#today">Where We Are Today</a>
+      <a href="#adventures">Honeymoon Adventures</a>
+      <a href="#unique">What Makes Us Unique</a>
+      <a href="Tributes.html">Tributes</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <h2 id="beginnings">In the Beginning</h2>
+    <img class="img-right" src="Extremehoneymoons/AboutUs/OlderCouple2Sm.jpg" alt="Owners hiking" width="200" height="300">
+    <p class="lede">Ted and Betty Russon have been happily married for 30 years. They look back on their honeymoon at Arches National Monument with great fondness. They’ve kept that same spirit by trying new extreme sports together—just for fun.</p>
+    <p>Their original honeymoon mixed wild mountain biking over Moab’s red rock with a three-day white-water trip down the Colorado River. That adventure spirit became the DNA of Extreme Honeymoons.</p>
+    <p><a href="#top">Return to Top</a></p>
+    <hr>
+
+    <h2 id="today">Where We Are Today</h2>
+    <img class="img-left" src="Extremehoneymoons/AboutUs/CoupleBike1Sm.jpg" alt="Couple cycling" width="250" height="166">
+    <p>Extreme Honeymoons has been in business since 1976. Over 2,000 couples have taken high-octane trips with us. Several of the Russons’ own kids have chosen ultra-extreme honeymoons too—proof the idea works for real couples.</p>
+    <img class="img-right" src="Extremehoneymoons/AboutUs/CoupleHikingSm.jpg" alt="Couple hiking" width="250" height="171">
+    <p>Utah’s geography gives us a built-in advantage: world-class rivers, red rock, powder snow, and alpine peaks—often within a day’s drive.</p>
+    <p><a href="#top">Return to Top</a></p>
+    <hr>
+
+    <h2 id="adventures">Honeymoon Adventures</h2>
+
+    <!-- REQUIRED TABLE (replaces the simple bullet list) -->
+    <table class="eh-table">
+      <caption>Adventure Tours</caption>
+      <thead>
+        <tr><th>Activity</th><th>Tour Length</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Ice Climbing on Bridal Veil Falls</td><td>1–2 day Tour</td></tr>
+        <tr><td>Bungee Jumping off Dead Horse Point</td><td>2–3 day Tour</td></tr>
+        <tr><td>Cougar Bow Hunt — Manti-LaSal NF</td><td>1 week Tour</td></tr>
+        <tr><td>Parasailing from Mt. Timpanogos</td><td>1–2 day Tour</td></tr>
+        <tr><td>4WD Safari Rendezvous in Moab</td><td>1 week Tour</td></tr>
+        <tr><td>Swim with Carp in Utah Lake</td><td>1–2 day Tour</td></tr>
+        <tr><td>Heliskiing on Kings Peak</td><td>1–2 day Tour</td></tr>
+        <tr><td>Bobsled &amp; Ski Jump — Utah Olympic Park</td><td>2–3 day Tour</td></tr>
+      </tbody>
+    </table>
+
+    <div class="clear"></div>
+    <p><a href="#top">Return to Top</a></p>
+    <hr>
+
+    <h2 id="unique">What Makes Us Unique</h2>
+    <img class="img-right" src="Extremehoneymoons/AboutUs/iStockParaglideSm.jpg" alt="Paragliding" width="250" height="203">
+    <p>Couples who want to truly know each other choose an extreme honeymoon. We handle the logistics—gear delivery, transportation, meals, and lessons—so you focus on the experience. Choose a guided package or pitch your own daring idea and we’ll build it. Just don’t forget to sign the waiver!</p>
+    <p><a href="#top">Return to Top</a></p>
+    <hr>
+
+    <h2>Press Releases</h2>
+    <img class="img-left" src="Extremehoneymoons/AboutUs/SkiCoupleSm.jpg" alt="Ski couple" width="250" height="165">
+    <h3>Wild Thing Magazine, August 2012</h3>
+    <p>“If you believe you only get married once, make the honeymoon unforgettable. Extreme Honeymoons plans every step of an extreme trip so all you do is survive.”</p>
+    <h3>Utah Brides Magazine, May 2012</h3>
+    <p>“Worried your honeymoon might be forgettable? Consider an Extreme Honeymoon. Reasonably priced tours, insurance included, and totally safe.”</p>
+    <p class="clear"><a href="#top">Return to Top</a></p>
+  </main>
+
+  <footer>
+    © Extreme Honeymoons • <a href="Tributes.html">Read Tributes</a>
+  </footer>
+</body>
+</html>

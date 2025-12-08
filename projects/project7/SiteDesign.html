@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Site Design — Extreme Honeymoons</title>
+  <style>
+    :root{--ink:#222;--muted:#666;--paper:#fff;--brand:#0B4F2D;--brand-light:#9FE870;--accent:#1756FF}
+    html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+    main{max-width:900px;margin:28px auto;padding:0 16px}
+    h1{color:var(--brand)}
+    .swatch{display:inline-block;width:120px;height:60px;border:1px solid #ddd;margin:6px 10px 16px 0;border-radius:6px;vertical-align:middle}
+    .row{display:flex;gap:16px;align-items:center;margin-bottom:12px}
+    code{background:#f6f6f6;padding:2px 6px;border-radius:4px}
+    a:link{color:var(--accent)} a:visited{color:#6a3bf5} a:hover{color:#0b3dd6;text-decoration:underline} a:active{color:#c20b0b}
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Site Design Notes</h1>
+
+    <h2>Color Palette</h2>
+    <div class="row"><span class="swatch" style="background:#0B4F2D"></span> Deep Green <code>#0B4F2D</code></div>
+    <div class="row"><span class="swatch" style="background:#9FE870"></span> Light Green <code>#9FE870</code></div>
+    <div class="row"><span class="swatch" style="background:#222"></span> Charcoal <code>#222222</code></div>
+    <div class="row"><span class="swatch" style="background:#666"></span> Mid Gray <code>#666666</code></div>
+    <div class="row"><span class="swatch" style="background:#1756FF"></span> Accent Blue <code>#1756FF</code></div>
+
+    <h2>Typography</h2>
+    <p>System-UI stack for fast, accessible rendering. Headings use heavier weight and the Deep Green brand color; body copy uses charcoal (#222) for contrast.</p>
+
+    <h2>Links</h2>
+    <ul>
+      <li><strong>Link:</strong> #1756FF</li>
+      <li><strong>Visited:</strong> #6A3BF5</li>
+      <li><strong>Hover:</strong> darker blue + underline</li>
+      <li><strong>Active:</strong> #C20B0B</li>
+    </ul>
+
+    <h2>Layout & Imagery</h2>
+    <p>Images use `.img-left` and `.img-right` utility classes (floats + padding + light border). All images include explicit <code>width</code> and <code>height</code> attributes to satisfy the assignment and improve CLS.</p>
+
+    <p>Return to: <a href="AboutUs.html">About Us</a> · <a href="Tributes.html">Tributes</a></p>
+  </main>
+</body>
+</html>
