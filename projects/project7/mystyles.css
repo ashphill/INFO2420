@@ -17,12 +17,12 @@ body {
   
   header {
     width: 900px;
-    height: 180px;             /* adjust as needed */
-    background-color: #233a5c; /* header color from your palette */
-    overflow: hidden;          /* keeps floated items inside */
-    position: relative;
+    height: 180px;   /* lower or raise this if needed */
+    background-color: #233a5c;
+    overflow: hidden;
     padding: 10px 0;
   }
+  
   
   #logo {
     float: left;
@@ -93,6 +93,7 @@ body {
   #photos {
     text-align: center;
     margin-top: 10px;
+    max-height: 150px;
   }
   
   #fullsize {
