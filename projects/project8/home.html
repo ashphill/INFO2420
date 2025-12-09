@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Extreme Honeymoons – Home</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="mystyles.css" />
+
+  <!-- External JavaScript -->
+  <script src="myscripts.js"></script>
+</head>
+
+<!-- If you had a different onload function name in Project 6, use that here -->
+<body onload="preloadImages();">
+
+  <div id="container">
+    <header>
+      <!-- Logo rollover -->
+      <img
+        id="logo"
+        src="Images/EXHoneymoonsLogo.png"
+        alt="Extreme Honeymoons logo"
+      />
+
+      <!-- Banner image -->
+      <img
+        id="banner"
+        src="Images/EXbanner.png"
+        alt="Exciting honeymoon adventure banner"
+      />
+
+      <!-- Navigation bar INSIDE header -->
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="AboutUs.html">About Us</a></li>
+          <li><a href="Tributes.html">Tributes</a></li>
+          <li><a href="Survey.html">Survey</a></li>
+          <li><a href="Favorites.html">Favorites</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section>
+      <article>
+        <!-- Main heading + required welcome text -->
+        <h1>Extreme Honeymoons</h1>
+        <p>
+          Welcome to Extreme Honeymoons!
+          If you are just getting hitched, we can help make your honeymoon
+          outrageous. Take a look at our Excursions and take the opportunity
+          to complete our survey.
+        </p>
+
+        <!-- Thumbnails + fullsize image area -->
+        <h2>Featured Extreme Honeymoon Photos</h2>
+
+        <div id="photos">
+          <!-- Big photo that changes when you click thumbnails -->
+          <img
+            id="fullsize"
+            src="Images/"
+            alt="Extreme honeymoon adventure"
+          />
+
+          <!-- Thumbnails (edit filenames to match your own) -->
+          <div id="thumbs">
+            <a href="#"
+               onclick="return showPhoto('Images/Fullsize/photo1.jpg',
+                                         'Bungee jumping honeymoon');">
+              <img src="Images/"
+                   alt="Bungee jumping honeymoon thumbnail" />
+            </a>
+
+            <a href="#"
+               onclick="return showPhoto('Images/ScubaSmall.jpg',
+                                         'Scuba diving honeymoon');">
+              <img src="Images/Scubasmall.jpg"
+                   alt="Scuba diving honeymoon thumbnail" />
+            </a>
+
+            <a href="#"
+               onclick="return showPhoto('Images/Fullsize/photo3.jpg',
+                                         'Zipline honeymoon');">
+              <img src="Images/"
+                   alt="Zipline honeymoon thumbnail" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Mini-tribute area -->
+        <h2>Mini Tribute</h2>
+        <p class="mini-tribute">
+          <img
+            src="Images/tribute1.jpg"
+            alt="Happy couple on their extreme honeymoon"
+            class="float-left"
+          />
+          Our trip with Extreme Honeymoons was absolutely unforgettable.
+          From cliff diving to midnight zip lines, every moment was
+          packed with adventure and romance. <a href="Tributes.html">More &gt;&gt;</a>
+        </p>
+      </article>
+    </section>
+
+    <footer>
+      <p>
+        <a href="mailto:yourname@uvu.edu">Webmaster Email</a>
+      </p>
+      <p>This web site has been created solely for educational purposes.</p>
+    </footer>
+  </div>
+</body>
+</html>
