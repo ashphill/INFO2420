@@ -1,141 +1,278 @@
-/* === Global layout === */
+/* ==== Embedded fonts from AboutUs/Tributes ==== */
+@font-face{
+  font-family:"ModernAntiqua";
+  src: url("Fonts/ModernAntiqua.eot");
+  src: url("Fonts/ModernAntiqua.eot?#iefix") format("embedded-opentype"),
+       url("Fonts/ModernAntiqua.otf") format("opentype"),
+       url("Fonts/ModernAntiqua.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #202736; /* pick any body background color */
-  }
-  
-  /* Centered fixed-width container (900px) */
-  #container {
-    width: 900px;
-    margin: 0 auto;            /* centers the whole page */
-  }
-  
-  /* === Header & nav === */
-  
-  header {
-    width: 900px;
-    height: 180px;   /* lower or raise this if needed */
-    background-color: #233a5c;
-    overflow: hidden;
-    padding: 10px 0;
-  }
-  
-  
-  #logo {
-    float: left;
-    margin-left: 10px;
-    max-height: 150px;
-  }
-  
-  #banner {
-    float: left;
-    margin-left: 20px;
-    max-height: 150px;
-  }
-  
-  /* nav INSIDE the header, floated right, 30% width */
-  nav {
-    float: right;
-    width: 30%;
-    margin-right: 10px;
-  }
-  
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav li {
-    margin-bottom: 5px;
-  }
-  
-  nav a {
-    display: block;
-    padding: 8px 10px;
-    background-color: #406fa2;
-    color: #ffffff;
-    text-decoration: none;
-    text-align: center;
-    border-radius: 5px;
-    font-weight: bold;
-  }
-  
-  nav a:hover {
-    background-color: #6d93c7;  /* different hover color */
-  }
-  
-  /* === Section and article === */
-  
-  section {
-    width: 900px;
-    background-image: url("Images/backimage.jpg"); /* your Project 6 background */
-    background-repeat: repeat-y;
-    overflow: auto;
-  }
-  
-  article {
-    width: 800px;
-    margin: 0 auto;
-    padding: 15px;
-    background-color: rgba(255, 255, 255, 0.9);
-  }
-  
-  h1 {
-    margin-top: 0;
-  }
-  
-  /* === Thumbnails + fullsize === */
-  
-  #photos {
-    text-align: center;
-    margin-top: 10px;
-    max-height: 150px;
-  }
-  
-  #fullsize {
-    max-width: 100%;
-    border: 3px solid #233a5c;
-    margin-bottom: 10px;
-  }
-  
-  #thumbs img {
-    width: 100px;        /* adjust to match your thumbnail sizes */
-    margin: 0 5px 10px;
-    border: 2px solid #cccccc;
-  }
-  
-  #thumbs img:hover {
-    border-color: #406fa2;
-  }
-  
-  /* === Mini-tribute === */
-  
-  .float-left {
-    float: left;
-    margin: 0 10px 10px 0;
-  }
-  
-  .mini-tribute {
-    overflow: auto;      /* clears the float inside */
-  }
-  
-  /* === Footer === */
-  
-  footer {
-    width: 900px;
-    background-color: #233a5c;
-    color: #ffffff;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 0.9em;
-    clear: both;
-  }
-  
-  footer a {
-    color: #ffffff;
-  }
-  
+/* New: Kh Kangrey Regular */
+@font-face{
+  font-family:"KHKangrey";
+  src: url("fonts/Kh Kangrey Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root{
+  --ink:#222;
+  --muted:#666;
+  --paper:#fff;
+  --brand:#0B4F2D;
+  --brand-light:#9FE870;
+  --accent:#1756FF;
+}
+
+/* Global reset-ish */
+*{
+  box-sizing:border-box;
+}
+
+html,body{
+  margin:0;
+  padding:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  line-height:1.6;
+}
+
+/* Shared container used by all main pages */
+#container{
+  max-width:980px;
+  margin:0 auto;
+  background:#ffffff;
+  border:1px solid #e0e0e0;
+}
+
+/* Header + nav bar */
+header{
+  background:var(--brand);
+  color:#fff;
+  padding:16px;
+  border-bottom:6px solid #00000020;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:12px;
+}
+
+header h1{
+  margin:0;
+  font-weight:800;
+  letter-spacing:.3px;
+}
+
+header nav{
+  margin-left:auto;
+}
+
+header nav ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+
+header nav li{
+  margin:0;
+}
+
+header nav a{
+  color:#fff;
+  text-decoration:none;
+  padding:4px 8px;
+  border-radius:6px;
+  font-weight:600;
+}
+
+header nav a:hover{
+  background:#ffffff22;
+}
+
+/* Logo + banner */
+#logo{
+  height:80px;
+}
+
+#banner{
+  height:80px;
+}
+
+/* Main body area */
+section{
+  padding:16px;
+}
+
+h1, h2{
+  color:var(--brand);
+}
+
+hr{
+  border:0;
+  border-top:1px solid #ddd;
+  margin:24px 0;
+}
+
+/* Home page gallery */
+#photos{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  margin-top:12px;
+}
+
+#fullsize{
+  flex:2;
+  max-width:100%;
+  border:1px solid #ddd;
+}
+
+#thumbs{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+#thumbs img{
+  max-width:100%;
+  height:auto;
+  border:1px solid #ccc;
+}
+
+/* Mini tribute */
+.float-left{
+  float:left;
+  margin:0 10px 10px 0;
+}
+
+.mini-tribute{
+  overflow:hidden;
+}
+
+/* AboutUs/Tributes image helpers */
+.img-left{
+  float:left;
+  margin:0 14px 10px 0;
+  padding:6px;
+  background:#fafafa;
+  border:1px solid #e6e6e6;
+  border-radius:6px;
+}
+
+.img-right{
+  float:right;
+  margin:0 0 10px 14px;
+  padding:6px;
+  background:#fafafa;
+  border:1px solid #e6e6e6;
+  border-radius:6px;
+}
+
+.clear{
+  clear:both;
+}
+
+.lede{
+  font-size:1.1rem;
+  color:var(--muted);
+}
+
+/* Links */
+a:link{color:var(--accent);}
+a:visited{color:#6a3bf5;}
+a:hover{color:#0b3dd6;text-decoration:underline;}
+a:active{color:#c20b0b;}
+
+/* Footer */
+footer{
+  margin:0;
+  padding:16px;
+  color:var(--muted);
+  text-align:center;
+  background:#f5f5f5;
+}
+
+/* Pill label (AboutUs heading) */
+.pill{
+  display:inline-block;
+  background:var(--brand-light);
+  color:#083b22;
+  font-weight:700;
+  padding:2px 8px;
+  border-radius:999px;
+}
+
+/* Tables */
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+caption{
+  font-family:"ModernAntiqua", serif;
+  font-size:1.25rem;
+  background:#f2f5f9;
+  padding:.6rem 1rem;
+  border-radius:10px;
+  margin-bottom:.5rem;
+  letter-spacing:.3px;
+}
+
+th{
+  text-align:left;
+  background:#2f557f;
+  color:#fff;
+  padding:.55rem .75rem;
+  font-weight:600;
+}
+
+td{
+  background:#fbfdff;
+  color:#222;
+  padding:.5rem .75rem;
+  border-bottom:1px solid #dbe6f5;
+}
+
+.eh-table th,
+.eh-table td{
+  font-family:"KHKangrey", serif;
+}
+
+/* Figure */
+figure{
+  margin:0 0 12px 0;
+}
+
+figcaption{
+  font-size:.9rem;
+  color:var(--muted);
+  text-align:center;
+}
+
+/* ===== Splash (index.html) ===== */
+
+body.splash{
+  background:#f7f7f7;
+  margin:0;
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+}
+
+.splash-header{
+  text-align:center;
+  margin-bottom:1rem;
+}
+
+.splash-main img{
+  max-width:100%;
+  height:auto;
+}
