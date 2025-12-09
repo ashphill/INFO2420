@@ -6,14 +6,14 @@
 
   <!-- External CSS -->
   <link rel="stylesheet" href="mystyles.css" />
+  <!-- Print stylesheet (Project 8) -->
+  <link rel="stylesheet" href="print.css" media="print" />
 
   <!-- External JavaScript -->
   <script src="myscripts.js"></script>
 </head>
 
-<!-- If you had a different onload function name in Project 6, use that here -->
 <body onload="preloadImages();">
-
   <div id="container">
     <header>
       <!-- Logo rollover -->
@@ -33,11 +33,11 @@
       <!-- Navigation bar INSIDE header -->
       <nav>
         <ul>
-          <li><a href="home.html">Home</a></li>
+          <li><a href="Home.html">Home</a></li>
           <li><a href="AboutUs.html">About Us</a></li>
           <li><a href="Tributes.html">Tributes</a></li>
           <li><a href="Survey.html">Survey</a></li>
-          <li><a href="Favorites.html">Favorites</a></li>
+          <li><a href="Links.html">Favorites</a></li>
         </ul>
       </nav>
     </header>
@@ -49,7 +49,7 @@
         <p>
           Welcome to Extreme Honeymoons!
           If you are just getting hitched, we can help make your honeymoon
-          outrageous. Take a look at our Excursions and take the opportunity
+          outrageous. Take a look at our excursions and take the opportunity
           to complete our survey.
         </p>
 
@@ -60,30 +60,30 @@
           <!-- Big photo that changes when you click thumbnails -->
           <img
             id="fullsize"
-            src="Images/"
+            src="Images/Fullsize/photo1.jpg"
             alt="Extreme honeymoon adventure"
           />
 
-          <!-- Thumbnails (edit filenames to match your own) -->
+          <!-- Thumbnails (update filenames to match your own images) -->
           <div id="thumbs">
             <a href="#"
                onclick="return showPhoto('Images/Fullsize/photo1.jpg',
                                          'Bungee jumping honeymoon');">
-              <img src="Images/"
+              <img src="Images/photo1thumb.jpg"
                    alt="Bungee jumping honeymoon thumbnail" />
             </a>
 
             <a href="#"
                onclick="return showPhoto('Images/ScubaSmall.jpg',
                                          'Scuba diving honeymoon');">
-              <img src="Images/Scubasmall.jpg"
+              <img src="Images/ScubaSmall.jpg"
                    alt="Scuba diving honeymoon thumbnail" />
             </a>
 
             <a href="#"
                onclick="return showPhoto('Images/Fullsize/photo3.jpg',
                                          'Zipline honeymoon');">
-              <img src="Images/"
+              <img src="Images/photo3thumb.jpg"
                    alt="Zipline honeymoon thumbnail" />
             </a>
           </div>
@@ -99,7 +99,8 @@
           />
           Our trip with Extreme Honeymoons was absolutely unforgettable.
           From cliff diving to midnight zip lines, every moment was
-          packed with adventure and romance. <a href="Tributes.html">More &gt;&gt;</a>
+          packed with adventure and romance.
+          <a href="Tributes.html#CougarHunt">More &gt;&gt;</a>
         </p>
       </article>
     </section>

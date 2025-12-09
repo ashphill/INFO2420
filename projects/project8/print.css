@@ -1,0 +1,36 @@
+/* === PRINT-ONLY OVERRIDES === */
+
+body{
+    background:#ffffff;
+    color:#000000;
+    font-family:"Times New Roman", Times, serif;
+  }
+  
+  /* Make content full-width on the page */
+  #container,
+  section,
+  article{
+    width:100%;
+  }
+  
+  /* Hide nav and footer when printing */
+  nav,
+  footer{
+    display:none;
+  }
+  
+  /* Article readable width with margins */
+  article{
+    width:95%;
+    margin:0 auto;
+  }
+  
+  /* Remove floats for print so images stack nicely */
+  .img-left,
+  .img-right,
+  .float-left{
+    float:none;
+    display:block;
+    margin:0 auto 10px auto;
+  }
+  

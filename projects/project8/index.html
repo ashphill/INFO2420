@@ -1,19 +1,57 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <title>Extreme Honeymoons</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <style>
-    body{display:grid;place-items:center;min-height:100svh;margin:0;background:#f7f7f7}
-    main{padding:1rem;background:#fff;border:1px solid #ddd;border-radius:12px}
-    img{max-width:100%;height:auto;display:block}
-    p{font:14px/1.4 system-ui,Arial,sans-serif;color:#444;margin:.75rem 0 0}
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="mystyles.css" />
 </head>
-<body>
-  <main>
-    <img src="images/map.png" alt="Map for Extreme Honeymoons" />
+<body class="splash">
+  <header class="splash-header">
+    <h1>Extreme Honeymoons</h1>
+    <p>Outrageous adventures for newlyweds</p>
+  </header>
+
+  <main class="splash-main">
+    <!-- Use your Project 5 imagemap graphic here -->
+    <img
+      src="Images/map.png"
+      alt="Navigation image for Extreme Honeymoons"
+      usemap="#mainmap"
+    />
   </main>
+
+  <!-- Hotspots – adjust coords in Dreamweaver’s imagemap editor -->
+  <map name="mainmap" id="mainmap">
+    <!-- Circle: Home -->
+    <area shape="circle" coords="80,130,40"
+          href="Home.html"
+          alt="Home"
+          title="Go to Home page" />
+
+    <!-- Square: About Us -->
+    <area shape="rect" coords="170,40,260,130"
+          href="AboutUs.html"
+          alt="About Us"
+          title="Learn about Extreme Honeymoons" />
+
+    <!-- Star: Tributes -->
+    <area shape="poly"
+          coords="140,210,170,260,230,260,185,295,200,345,140,320,80,345,95,295,50,260,110,260"
+          href="Tributes.html"
+          alt="Tributes"
+          title="Read honeymoon tributes" />
+
+    <!-- Extra areas: Survey + Links (put them on open parts of image) -->
+    <area shape="rect" coords="0,0,70,60"
+          href="Survey.html"
+          alt="Survey"
+          title="Take our survey" />
+
+    <area shape="rect" coords="250,0,320,60"
+          href="Links.html"
+          alt="Favorite Links"
+          title="See our favorite links" />
+  </map>
 </body>
 </html>
